@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Official sidenav project</title>
+   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav class="navbar">
+      <article class="header">
+         <i class="bx bxl-c-plus-plus logo"></i>
+         <h1 class="logo-text">CodingLab</h1>
+         <i class="bx bx-menu" id="menuBtn"></i>
+      </article>
+      <ul class="nav-links">
+         <li>
+            <i class="bx bx-search"></i>
+            <input type="text" id="search" placeholder="Search...">
+            <span class="tooltip">Search</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-grid-alt"></i><span class="link">Dashboard</span></a>
+            <span class="tooltip">Dashboard</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-user"></i><span class="link">Users</span></a>
+            <span class="tooltip">Users</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-chat"></i><span class="link">Messages</span></a>
+            <span class="tooltip">Messages</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-pie-chart-alt-2"></i><span class="link">Analytics</span></a>
+            <span class="tooltip">Analytics</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-folder"></i><span class="link">File Manager</span></a>
+            <span class="tooltip">File Manager</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-cart-alt"></i><span class="link">Order</span></a>
+            <span class="tooltip">Order</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-heart"></i><span class="link">Saved</span></a>
+            <span class="tooltip">Saved</span>
+         </li>
+         <li>
+            <a href="#"><i class="bx bx-cog"></i><span class="link">Settings</span></a>
+            <span class="tooltip">Settings</span>
+         </li>
+         <li class="profile">
+            <article class="profile-details">
+               <img src="profile.jpg" alt="Profile picture">
+               <aside>
+                  <h4>Jeffrey Claybrook</h4>
+                  <p>Product Manager</p>
+               </aside>
+            </article>
+            <i class="bx bx-log-out" class="logout" id="logout"></i>
+         </li>
+      </ul>
+   </nav>
+   <main>
+      <h2>Hello world</h2>
+   </main>
+   <script src="script.js"></script>
+</body>
+</html>
