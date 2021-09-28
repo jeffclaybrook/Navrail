@@ -1,17 +1,29 @@
+:root {
+   --orange: #BF5700;
+   --black: #202124;
+   --gray: #5f6368;
+   --hover: #f1f3f4;
+}
+
 * {
    box-sizing: border-box;
    margin: 0;
    padding: 0;
 }
 
+*::before, *::after {
+   box-sizing: border-box;
+}
+
 html {
+   font-size: 16px;
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
    -webkit-text-size-adjust: 100%;
 }
 
 body {
-   background: #E4E9F7;
+   font-size: 16px;
    font-family: Poppins, sans-serif;
 }
 
@@ -28,47 +40,52 @@ a {
    cursor: pointer;
 }
 
-.navbar {
+nav {
    position: fixed;
    top: 0;
    left: 0;
    height: 100%;
    width: 78px;
-   background: #11101D;
+   background: #fff;
    padding: 6px 14px;
    z-index: 99;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
+   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
-.navbar.open {
+nav.expanded {
    width: 250px;
 }
 
-.navbar .header {
+nav aside {
    height: 50px;
    display: flex;
    align-items: center;
    position: relative;
+   white-space: nowrap;
 }
 
-.navbar .header .logo {
+nav aside .logo {
    opacity: 0;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
+   white-space: nowrap;
+   color: var(--orange);
 }
 
-.navbar .header .logo-text {
-   color: #fff;
-   font-size: 20px;
-   font-weight: 600;
+nav aside .logo-text {
+   color: var(--black);
+   font-size: 18px;
+   font-weight: 400;
    opacity: 0;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
+   white-space: nowrap;
 }
 
-.navbar.open .header .logo, .navbar.open .header .logo-text {
+nav.expanded aside .logo, nav.expanded aside .logo-text {
    opacity: 1;
 }
 
-.navbar .header #menuBtn {
+nav aside .menu-icon {
    position: absolute;
    top: 50%;
    right: 0;
@@ -76,15 +93,15 @@ a {
    font-size: 23px;
    text-align: center;
    cursor: pointer;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
 }
 
-.navbar.open .header #menuBtn {
+nav.expanded aside .menu-icon {
    text-align: right;
 }
 
-.navbar i {
-   color: #fff;
+nav .bx {
+   color: var(--gray);
    height: 60px;
    min-width: 50px;
    font-size: 28px;
@@ -92,18 +109,17 @@ a {
    line-height: 60px;
 }
 
-.navbar .nav-links {
-   margin-top: 20px;
+nav ul {
    height: 100%;
 }
 
-.navbar li {
+nav li {
    position: relative;
    margin: 8px 0;
    list-style: none;
 }
 
-.navbar li .tooltip {
+nav li .tooltip {
    position: absolute;
    top: -20px;
    left: calc(100% + 15px);
@@ -120,176 +136,145 @@ a {
    transition: 0s;
 }
 
-.navbar li:hover .tooltip {
+nav li:hover .tooltip {
    opacity: 1;
    pointer-events: auto;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
    top: 50%;
    transform: translateY(-50%);
 }
 
-.navbar.open li .tooltip {
+nav.expanded li .tooltip {
    display: none;
 }
 
-.navbar input {
-   font-size: 15px;
-   color: #fff;
-   font-weight: 400;
-   outline: none;
-   border: none;
-   border-radius: 12px;
-   background: #1d1b31;
-   height: 50px;
-   width: 50px;
-   transition: all 0.4s ease;
-}
-
-.navbar.open input {
-   padding: 0 20px 0 50px;
-   width: 100%;
-}
-
-.navbar .bx-search {
-   position: absolute;
-   top: 50%;
-   left: 0;
-   transform: translateY(-50%);
-   font-size: 22px;
-   background: #1d1b31;
-   color: #fff;
-}
-
-.navbar.open .bx-search:hover {
-   background: #1d1b31;
-   color: #fff;
-}
-
-.navbar .bx-search:hover {
-   background: #fff;
-   color: #11101d;
-}
-
-.navbar li a {
+nav li a {
    display: flex;
    height: 100%;
    width: 100%;
    border-radius: 12px;
    align-items: center;
    text-decoration: none;
-   background: #11101D;
-   transition: all 0.4s ease;
-}
-
-.navbar li a:hover {
    background: #fff;
+   transition: all 0.375s ease;
 }
 
-.navbar li a .link {
-   color: #fff;
+nav li a:hover {
+   background: var(--hover);
+}
+
+nav li a .link {
+   color: var(--black);
    font-size: 15px;
    font-weight: 400;
    white-space: nowrap;
    pointer-events: none;
    opacity: 0;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
 }
 
-.navbar.open li a .link {
+nav.expanded li a .link {
    opacity: 1;
    pointer-events: auto;
 }
 
-.navbar li a:hover .link, .navbar li a:hover i {
-   transition: all 0.4s ease;
-   color: #11101D;
+nav li a:hover .link {
+   transition: all 0.375s ease;
+   color: var(--black);
 }
 
-.navbar li i {
+nav li a:hover .bx {
+   transition: all 0.375s ease;
+   color: var(--gray);
+}
+
+nav li .bx {
    height: 50px;
    line-height: 50px;
    font-size: 18px;
    border-radius: 12px;
 }
 
-.navbar li.profile {
+nav li.active a {
+   background: rgba(191, 87, 0, .12);
+}
+
+nav li.active a .link, nav li.active .bx, nav li.active a:hover .link, nav li.active a:hover .bx {
+   color: var(--orange);
+}
+
+nav .profile {
    position: fixed;
    width: 78px;
+   height: 60px;
    left: 0;
    bottom: 0;
-   padding: 7px 14px;
-   background: #1d1b31;
-   overflow: hidden;
-   transition: all 0.4s ease;
+   background: #fff;
+   transition: all 0.375s ease;
    margin-bottom: 0;
-}
-
-.navbar.open li.profile {
-   width: 250px;
-}
-
-.navbar li .profile-details {
+   padding: 6px 14px;
+   overflow: hidden;
    display: flex;
    align-items: center;
-   flex-wrap: nowrap;
-}
-
-.navbar li img {
-   height: 45px;
-   width: 45px;
-   object-fit: cover;
-   border-radius: 6px;
-   margin-right: 10px;
-}
-
-.navbar li.profile h4, .navbar li.profile p {
-   font-weight: 400;
-   color: #fff;
    white-space: nowrap;
+}
+
+nav .profile img {
+   width: 45px;
+   height: 45px;
+   border-radius: 12px;
+   object-fit: cover;
+   margin-right: 8px;
+}
+
+nav .profile-details h4 {
+   font-weight: 400;
+   color: var(--black);
    font-size: 15px;
+   white-space: nowrap;
 }
 
-.navbar li.profile p {
+nav .profile-details p {
+   font-weight: 400;
+   color: var(--black);
    font-size: 12px;
+   white-space: nowrap;
 }
 
-.navbar .profile #logout {
+nav .profile .bx-log-out {
    position: absolute;
    top: 50%;
    right: 0;
    transform: translateY(-50%);
-   background: #1d1b31;
    width: 100%;
    height: 60px;
    line-height: 60px;
+   font-size: 18px;
    border-radius: 0px;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
+   background: #fff;
+   cursor: pointer;
 }
 
-.navbar.open .profile #logout {
+nav.expanded .profile {
+   width: 250px;
+}
+
+nav.expanded .profile .bx-log-out {
    width: 50px;
-   background: none;
 }
 
 main {
    position: relative;
-   min-height: 100vh;
    top: 0;
    left: 78px;
    width: calc(100% - 78px);
-   z-index: 2;
-   transition: all 0.4s ease;
+   transition: all 0.375s ease;
+   padding: .75rem;
 }
 
-.navbar.open ~ main {
+nav.expanded ~ main {
+   position: relative;
    left: 250px;
    width: calc(100% - 250px);
-}
-
-main h2 {
-   display: inline-block;
-   color: #11101d;
-   font-size: 25px;
-   font-weight: 500;
-   margin: 18px;
 }

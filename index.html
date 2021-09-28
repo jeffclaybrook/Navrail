@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Official sidenav project</title>
+   <title>UT Nav Rail</title>
    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,57 +12,78 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <nav class="navbar">
-      <article class="header">
+   <nav>
+      <aside>
          <i class="bx bxl-c-plus-plus logo"></i>
-         <h1 class="logo-text">CodingLab</h1>
-         <i class="bx bx-menu" id="menuBtn"></i>
-      </article>
-      <ul class="nav-links">
-         <li>
-            <i class="bx bx-search"></i>
-            <input type="text" id="search" placeholder="Search...">
-            <span class="tooltip">Search</span>
+         <h1 class="logo-text">UT Healthier TV</h1>
+         <i class="bx bx-menu menu-icon" id="menuBtn"></i>
+      </aside>
+      <ul>
+         <li class="active">
+            <a href="#">
+               <i class="bx bx-home"></i>
+               <span class="link">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
          </li>
          <li>
-            <a href="#"><i class="bx bx-grid-alt"></i><span class="link">Dashboard</span></a>
-            <span class="tooltip">Dashboard</span>
-         </li>
-         <li>
-            <a href="#"><i class="bx bx-user"></i><span class="link">Users</span></a>
-            <span class="tooltip">Users</span>
-         </li>
-         <li>
-            <a href="#"><i class="bx bx-chat"></i><span class="link">Messages</span></a>
-            <span class="tooltip">Messages</span>
-         </li>
-         <li>
-            <a href="#"><i class="bx bx-pie-chart-alt-2"></i><span class="link">Analytics</span></a>
-            <span class="tooltip">Analytics</span>
-         </li>
-         <li>
-            <a href="#"><i class="bx bx-folder"></i><span class="link">File Manager</span></a>
-            <span class="tooltip">File Manager</span>
-         </li>
-         <li>
-            <a href="#"><i class="bx bx-bookmark"></i><span class="link">Saved</span></a>
+            <a href="#">
+               <i class="bx bx-bookmark"></i>
+               <span class="link">Saved</span>
+            </a>
             <span class="tooltip">Saved</span>
          </li>
          <li>
-            <a href="#"><i class="bx bx-cog"></i><span class="link">Settings</span></a>
+            <a href="#">
+               <i class="bx bx-history"></i>
+               <span class="link">History</span>
+            </a>
+            <span class="tooltip">History</span>
+         </li>
+         <li>
+            <a href="#">
+               <i class="bx bx-folder"></i>
+               <span class="link">Resources</span>
+            </a>
+            <span class="tooltip">Resources</span>
+         </li>
+         <li>
+            <a href="#">
+               <i class="bx bx-broadcast"></i>
+               <span class="link">Reach</span>
+            </a>
+            <span class="tooltip">Reach</span>
+         </li>
+         <li>
+            <a href="#">
+               <i class="bx bx-bulb"></i>
+               <span class="link">Learning</span>
+            </a>
+            <span class="tooltip">Learning</span>
+         </li>
+         <li>
+            <a href="#">
+               <i class="bx bx-cog"></i>
+               <span class="link">Settings</span>
+            </a>
             <span class="tooltip">Settings</span>
          </li>
-         <li class="profile">
-            <article class="profile-details">
-               <img src="profile.jpg" alt="Profile picture">
-               <aside>
-                  <h4>Jeffrey Claybrook</h4>
-                  <p>Product Manager</p>
-               </aside>
-            </article>
-            <i class="bx bx-log-out" class="logout" id="logout"></i>
+         <li>
+            <a href="#">
+               <i class="bx bx-help-circle"></i>
+               <span class="link">Help</span>
+            </a>
+            <span class="tooltip">Help</span>
          </li>
       </ul>
+      <article class="profile">
+         <img src="images/avatar.png" alt="Jeffrey Claybrook profile picture">
+         <section class="profile-details">
+            <h4>Jeffrey Claybrook</h4>
+            <p>Product Manager</p>
+         </section>
+         <i class="bx bx-log-out"></i>
+      </article>
    </nav>
    <main>
       <h2>Hello world</h2>
