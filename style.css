@@ -25,6 +25,7 @@ html {
 body {
    font-size: 16px;
    font-family: Poppins, sans-serif;
+   background: #fbfafa;
 }
 
 img {
@@ -268,13 +269,23 @@ main {
    position: relative;
    top: 0;
    left: 78px;
+   z-index: -1;
    width: calc(100% - 78px);
    transition: all 0.375s ease;
    padding: .75rem;
+   height: 100vh;
 }
 
 nav.expanded ~ main {
    position: relative;
    left: 250px;
    width: calc(100% - 250px);
+}
+
+@media only screen and (max-width: 600px) {
+   nav.expanded ~ main {
+      left: 78px;
+      width: calc(100% - 78px);
+      transition: all 0.375s ease;
+   }
 }
